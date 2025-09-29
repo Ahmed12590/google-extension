@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Motivational Quotes Extension",
+  "version": "1.0",
+  "description": "Get a motivational quote every time you open Google.",
+  "permissions": ["tabs", "scripting", "activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.google.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
